@@ -1,0 +1,595 @@
+<div class="row rp">
+    <div class="section-title desktop-12 mobile-3">
+    <h2 class="rp-title">GK HAIR LATEST BLOGS </h2>
+    </div>
+
+    <div class="clear"></div>
+
+    
+      <div id="blog-description" class="desktop-12 tablet-6 mobile-3" style="text-align: center">
+        <div class="rte">
+          <p>The latest news and announcements</p>
+        </div>
+      </div>
+      <div class="clear"></div>
+    
+
+{% assign count = 0 %}
+
+  {% assign blog_handles = "all-post" | split: "," %}
+     {% for handle in blog_handles  %}
+        {% for article in blogs[handle].articles limit: 5  %}
+
+
+     {% assign count = count | plus: 1 %}
+       {% if count == 1 %}
+       <div id="blog-articles" class="articles blog__alternate">
+        
+          <div data-aos="fade-up" class="single-article odd aos-init aos-animate">
+     
+    <div class="image-blogs">
+      {%- if article.image -%}
+            
+        <a href="">
+          
+  <div class="box-ratio" style="padding-bottom: 66.66666666666666%;">
+    <a href="{{ article.url }}">
+    <img class="lazyload-fade lazyautosizes lazyloaded"{{ article | img_url: 'master', scale: 2 | img_tag: '' }}>
+   </a>
+      </div>
+         
+        </a>
+    
+    </div>
+		{%- endif -%}
+
+  <div class="article-body aos-init" data-aos="fade-up">
+    <h3>
+      <a href="{{ article.url }}">{{ article.title }}</a>
+    </h3>
+
+    <div class="clear"></div>
+
+    <div class="rte">
+      
+	{{ article.content | truncatewords: 42 }}
+     <a
+          class="article-rte-continuereading"
+          href="{{ article.url }}"
+        >
+          {{ 'blogs.article_item.continue_reading' | t }}
+        </a> 
+    </div>
+
+    <div class="clear"></div>
+
+    <div class="post_meta">
+   
+<!--         <span class="posted">
+          Posted on <time datetime="Apr 28, 2017">Apr 28, 2017</time>
+        </span>
+        
+        <span class="posted_by">
+          
+          By 
+            Underground Support team
+          
+        </span> -->
+      
+<!--       
+        <ul>
+          
+            <li class="tags">
+              <a href="/blogs/news/tagged/clothing">
+                Clothing
+              </a>
+            </li>
+          
+            <li class="tags">
+              <a href="/blogs/news/tagged/fashion">
+                Fashion
+              </a>
+            </li>
+          
+        </ul> -->
+      
+    </div>
+  </div>
+ 
+</div>
+       {% endif %}
+ {% if count == 2 %}
+  <div data-aos="fade-up" class="single-article even aos-init">
+  <div class="article-body aos-init" data-aos="fade-up">
+    <h3>
+      <a href="{{ article.url }}">{{ article.title }}</a>
+    </h3>
+
+    <div class="clear"></div>
+
+    <div class="rte">
+      
+	{{ article.content | truncatewords: 25 }}
+    <a
+          class="article-rte-continuereading"
+          href="{{ article.url }}"
+        >
+          {{ 'blogs.article_item.continue_reading' | t }}
+        </a>  
+    </div>
+
+    <div class="clear"></div>
+
+    <div class="post_meta">
+      
+<!--         <span class="posted">
+          Posted on <time datetime="Apr 28, 2017">Apr 28, 2017</time>
+        </span>
+        
+        <span class="posted_by">
+          
+          By 
+            Underground Support team
+          
+        </span> -->     
+<!--         <ul>
+          
+            <li class="tags">
+              <a href="/blogs/news/tagged/clothing">
+                Clothing
+              </a>
+            </li>
+          
+            <li class="tags">
+              <a href="/blogs/news/tagged/fashion">
+                Fashion
+              </a>
+            </li>
+          
+        </ul> -->
+      
+    </div>
+  </div>
+   <div class="image-blogs">
+     {%- if article.image -%}
+     <a href="{{ article.url }}">
+    <div class="box-ratio" style="padding-bottom: 66.64285714285715%;">
+    <img class="lazyload-fade lazyautosizes lazyloaded" {{ article | img_url: 'master', scale: 2 | img_tag: '' }}>
+  </div>
+        
+   </a>
+      
+    </div>
+  {%- endif -%}  
+
+</div>
+
+  
+  {% endif %}
+  {% if count > 2 %}
+{% assign rmd = count | modulo:2 %}
+  {% if rmd == 1 %}
+  
+  <div id="blog-articles" class="articles blog__alternate">
+        
+          <div data-aos="fade-up" class="single-article odd aos-init aos-animate">
+     
+    <div class="image-blogs">
+      {%- if article.image -%}
+            
+        <a href="">
+          
+  <div class="box-ratio" style="padding-bottom: 66.66666666666666%;">
+    <a href="{{ article.url }}">
+    <img class="lazyload-fade lazyautosizes lazyloaded"{{ article | img_url: 'master', scale: 2 | img_tag: '' }}>
+   </a>
+      </div>
+         
+        </a>
+    
+    </div>
+		{%- endif -%}
+
+  <div class="article-body aos-init" data-aos="fade-up">
+    <h3>
+      <a href="{{ article.url }}">{{ article.title }}</a>
+    </h3>
+
+    <div class="clear"></div>
+
+    <div class="rte">
+      
+	{{ article.content | truncatewords: 42 }}
+     <a
+          class="article-rte-continuereading"
+          href="{{ article.url }}"
+        >
+          {{ 'blogs.article_item.continue_reading' | t }}
+        </a> 
+    </div>
+
+    <div class="clear"></div>
+
+    <div class="post_meta">
+      
+<!--         <span class="posted">
+          Posted on <time datetime="Apr 28, 2017">Apr 28, 2017</time>
+        </span>
+        
+        <span class="posted_by">
+          
+          By 
+            Underground Support team
+          
+        </span> -->
+      
+<!--       
+        <ul>
+          
+            <li class="tags">
+              <a href="/blogs/news/tagged/clothing">
+                Clothing
+              </a>
+            </li>
+          
+            <li class="tags">
+              <a href="/blogs/news/tagged/fashion">
+                Fashion
+              </a>
+            </li>
+          
+        </ul> -->
+      
+    </div>
+  </div>
+ 
+</div>
+</div> 
+  
+  
+  
+  {% else %}
+<div data-aos="fade-up" class="single-article even aos-init">
+  <div class="article-body aos-init" data-aos="fade-up">
+    <h3>
+      <a href="{{ article.url }}">{{ article.title }}</a>
+    </h3>
+
+    <div class="clear"></div>
+
+    <div class="rte">
+      
+	{{ article.content | truncatewords: 25 }}
+    <a
+          class="article-rte-continuereading"
+          href="{{ article.url }}"
+        >
+          {{ 'blogs.article_item.continue_reading' | t }}
+        </a>  
+    </div>
+
+    <div class="clear"></div>
+
+    <div class="post_meta">
+      
+<!--         <span class="posted">
+          Posted on <time datetime="Apr 28, 2017">Apr 28, 2017</time>
+        </span>
+        
+        <span class="posted_by">
+          
+          By 
+            Underground Support team
+          
+        </span> -->     
+<!--         <ul>
+          
+            <li class="tags">
+              <a href="/blogs/news/tagged/clothing">
+                Clothing
+              </a>
+            </li>
+          
+            <li class="tags">
+              <a href="/blogs/news/tagged/fashion">
+                Fashion
+              </a>
+            </li>
+          
+        </ul> -->
+      
+    </div>
+  </div>
+   <div class="image-blogs">
+     {%- if article.image -%}
+     <a href="{{ article.url }}">
+    <div class="box-ratio" style="padding-bottom: 66.64285714285715%;">
+    <img class="lazyload-fade lazyautosizes lazyloaded" {{ article | img_url: 'master', scale: 2 | img_tag: '' }}>
+  </div>
+        
+   </a>
+      
+    </div>
+  {%- endif -%}  
+
+</div>
+         </div>
+
+  {% endif %}
+   {% endif %}
+    
+  {% endfor %}
+{%- endfor -%}
+      
+
+ 
+
+
+  
+
+   
+
+  </div>
+
+
+<style>
+  .visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+  
+.pagination li {
+  display: inline; 
+  margin: 0 5px;
+}
+  .section-title {
+  margin: 0 0 24px;
+  
+  }
+ 
+  h2.rp-title {
+    font-size: 36px;
+    letter-spacing: 0;
+    text-transform: capitalize;
+    line-height: 20px;
+}
+  .rp {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 59px;
+    padding-top: 0px;
+}
+  .image-blogs {
+    height: 391px;
+}
+  .image-blogs {
+    margin-bottom: 25px;
+}
+  img.lazyload-fade.lazyautosizes.lazyloaded:hover {
+    transform: scale(1.1);
+}
+  img.lazyload-fade.lazyautosizes.lazyloaded {
+    transition: transform 7s cubic-bezier(.25, .5, .8, .65),-webkit-transform 7s cubic-bezier(.25, .5, .8, .65);
+}
+@media screen and (min-width:500px) {
+.row {
+   width: 92%
+ }
+}
+
+@media screen and (min-width:740px) {
+.row {
+   width: 720px
+ }
+}
+
+@media screen and (min-width:980px) {
+.row {
+   width: 960px
+ }
+}
+
+@media screen and (min-width:1220px) {
+.row {
+   width: 1200px
+ }
+}
+
+@media screen and (min-width:1320px) {
+ .row {
+   width: 1300px
+ }
+}
+
+@media screen and (min-width:1420px) {
+ .row {
+   width: 1400px
+ }
+}
+
+@media screen and (min-width:1660px) {
+  .row {
+   width: 1600px
+ }
+}
+  .blog-template .collection-banner {
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+}
+
+.blog-template .collection-banner .box-ratio {
+  padding-bottom: 400px;
+}
+
+@media screen and (max-width: 740px) {
+  .blog-template .collection-banner {
+    height: auto;
+  }
+   .rp {
+    margin-left: auto;
+    margin-right: auto;
+     padding: unset;
+}
+  .image-blogs {
+    height: auto;
+}
+  .image-blogs {
+    margin-bottom: 0px;
+}
+  .image-blogs .box-ratio {
+    padding-bottom: 53% !important;
+}
+  .blog-template .collection-banner img {
+    height: auto;
+  }
+  .blog-template .collection-banner .box-ratio {
+    padding-bottom: 0;
+  }
+}
+
+.blog-template #blog-description {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+div#blog-description p {
+    margin-bottom: 0;
+}
+
+#blog-articles {
+  width: 100%;
+  margin-top: 25px;
+}
+
+/* ---- Article grid ---- */
+
+.articles.blog__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 30px;
+  row-gap: 30px;
+}
+.articles.blog__grid .single-article {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.articles.blog__grid .image-blogs {
+  margin: 0 0 20px 0;
+}
+.articles.blog__grid .article-body {
+  padding: 10px !important;
+  text-align: center;
+  position: unset !important;
+  width: 100%;
+  margin: 0 !important;
+}
+.articles.blog__grid .single-article .posted {
+  text-align: center !important;
+  float: none !important;
+}
+@media screen and (max-width: 740px) {
+  .articles.blog__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---- Article alternating ---- */
+
+.articles.blog__alternate .single-article {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  align-items: center;
+}
+
+.articles.blog__alternate .single-article .image-blogs {
+  grid-column: auto / span 7;
+  width: 100%;
+}
+
+.articles.blog__alternate .single-article .article-body {
+  grid-column: auto / span 5;
+  width: 100%;
+  padding: 30px;
+  position: relative;
+  z-index: 1;
+  background: white;
+}
+
+@media screen and (min-width: 741px) {
+  .articles.blog__alternate .single-article.odd .article-body {
+      transform: translateX(-8.3333333%) !important;
+      width: 108.3333333%;
+  }
+
+  .articles.blog__alternate .single-article.even .article-body {
+      width: 108.3333333%;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .articles.blog__alternate .single-article .image-blogs {
+    grid-column: auto / span 12;
+  }
+  .articles.blog__alternate .single-article .article-body {
+    grid-column: auto / span 12;
+  }
+  .articles.blog__alternate .single-article.even .image-blogs {
+    order: 1;
+  }
+  .articles.blog__alternate .single-article.even .article-body {
+    order: 2;
+  }
+}
+  
+
+.image-blogs {
+  width: 100%;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: transparent;
+  overflow: hidden;
+}
+.image-blogs .box-ratio {
+  padding-bottom: 75%;
+}
+.image-blogs img {
+  object-fit: cover !important;
+  height: 100% !important;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* ---- Single article --- */
+
+@media screen and ( min-width: 741px ) {
+  #blog-article-page .share-icons {
+      top: 50%;
+      margin-top: -75px;
+      position: absolute;
+      right: 0;
+  }
+  .article-inner .section-title, .article-inner .section-title:after {
+      text-align: left;
+      left: 0;
+      margin-left: 0;
+  }
+  .article-inner {
+      width: 90%;
+  }
+}
+
+#blog-post {
+  margin-top: 30px;
+}
+  
+</style>
