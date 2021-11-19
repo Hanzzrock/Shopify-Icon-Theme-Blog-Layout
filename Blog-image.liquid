@@ -1,0 +1,30 @@
+{{ section.settings.image_1 | img_url: '1500x' | img_tag }}
+
+{% schema %}
+{
+  "name": "Image",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Image"    
+    }
+  ]
+}
+{% endschema %}
+<style>
+  div#shopify-section-Blog-image img {
+    width: 100%;
+    margin-bottom: 32px;
+}
+  @media (max-width: 719px) {
+  .home-section {
+    position: relative;
+    padding-top: 15px !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+  
+  
+  }
+</style>
