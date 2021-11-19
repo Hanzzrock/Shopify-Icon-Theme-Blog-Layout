@@ -1,0 +1,565 @@
+<div data-aos="fade-up" class="main__article aos-init aos-animate" id="blog-article-page">
+
+  <div class="articles blog__alternate">
+    <div class="single-article odd">
+  <div class="article-image2">
+        
+          <a href="{{ article.url }}">
+            
+
+
+<div class="box-ratio" style="padding-bottom: 66.66666666666666%;">
+<img class="lazyload-fade lazyautosizes lazyloaded" "{{ article | img_url: 'master'| img_tag: '' }}">
+</div>
+            
+          </a>
+        
+      </div>
+      <div class="article-body aos-init aos-animate" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+        <div class="article-inner">
+          <div class="section-title desktop-12 tablet-6 mobile-3">
+            <h1 class="b-title">{{ article.title }}</h1>
+            {{ article.metafields.global.view }}
+          </div>
+          <div class="post_meta">
+            
+              <span class="posted">
+               Posted on {{ article.published_at | date: format: 'short_month' }}
+              </span>
+              
+              
+              <span class="posted_by">
+                {{ article_author }}     
+              </span>
+            
+            
+              <ul>
+                {% if article.tags.size > 0 %}
+                  <li class="tags">
+                    {% for tag in article.tags %}
+                    <a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>{% unless forloop.last %},{% endunless %}
+                    {% endfor %}
+                  </li>
+                  {% endif %}
+
+                  
+                
+              </ul>
+            
+          </div>
+        </div>
+        
+          <div class="share-icons">
+<a href="//www.facebook.com/sharer.php?u={{ shop.url }}{{ article.url }}" class="facebook" title="Share on Facebook" target="_blank">
+
+
+
+
+
+<svg class="icon--facebook share-icons--icon" height="14px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 11 20" xml:space="preserve">
+  <g class="hover-fill" fill="#fff">
+    <path d="M11,0H8C5.2,0,3,2.2,3,5v3H0v4h3v8h4v-8h3l1-4H7V5c0-0.6,0.4-1,1-1h3V0z"></path>
+  </g>
+  <style>.share-icons .icon--facebook:hover .hover-fill { fill: #fff;}</style>
+</svg>
+
+
+
+
+
+
+</a>
+<a href="//twitter.com/intent/tweet?status={{ shop.url }}{{ article.url }}" title="Share on Twitter" target="_blank" class="twitter">
+
+
+
+
+
+<svg class="icon--twitter share-icons--icon" height="14px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24.5 20" style="enable-background:new 0 0 24.5 20;" xml:space="preserve">
+  <g class="hover-fill" fill="#fff">
+    <path d="M24.5,0c-1.1,0.8-2.2,1.3-3.5,1.7c-1.3-1.6-3.6-2.1-5.6-1.3S12.3,3,12.3,5v1.1c-4,0.1-7.7-1.8-10-5c0,0-4.5,10,5.6,14.5
+    c-2.3,1.6-5,2.3-7.8,2.2c10,5.6,22.3,0,22.3-12.8c0-0.3,0-0.7-0.1-0.9C23.3,3,24.2,1.6,24.5,0z"></path>
+  </g>
+  <style>.share-icons .icon--twitter:hover .hover-fill { fill: #fff;}</style>
+</svg>
+
+
+
+
+
+
+</a>
+
+
+
+
+  <a href="//pinterest.com/pin/create/button/?url={{ shop.url }}{{ article.url }}media={{ article_image }}" title="Share on Pinterest" target="_blank" class="pinterest">
+
+    
+
+
+
+<svg class="icon--pinterest share-icons--icon" height="14px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 15.5 20" xml:space="preserve">
+  <g class="hover-fill" fill="#fff">
+    <path id="Icon-Path" d="M0,7.2c0-0.8,0.1-1.7,0.4-2.4c0.4-0.8,0.8-1.5,1.3-2s1.2-1.1,1.9-1.5s1.5-0.8,2.3-0.9C6.5,0.1,7.3,0,8.1,0
+    c1.3,0,2.5,0.3,3.6,0.8s2,1.3,2.7,2.3c0.7,1.1,1.1,2.3,1.1,3.6c0,0.8-0.1,1.5-0.3,2.3c-0.1,0.8-0.4,1.5-0.7,2.1
+    c-0.3,0.7-0.7,1.2-1.2,1.7c-0.5,0.5-1.1,0.9-1.7,1.2s-1.5,0.5-2.3,0.4c-0.5,0-1.1-0.1-1.6-0.4c-0.7-0.1-1.1-0.5-1.2-0.9
+    c-0.1,0.3-0.1,0.8-0.4,1.3c-0.1,0.5-0.3,0.9-0.3,1.2c0,0.1-0.1,0.4-0.3,0.8c-0.1,0.3-0.1,0.5-0.3,0.8L4.9,18
+    c-0.1,0.3-0.4,0.7-0.5,0.9C4.1,19.2,4,19.6,3.6,20H3.5l-0.1-0.1c-0.1-1.2-0.1-2-0.1-2.3c0-0.8,0.1-1.6,0.3-2.5
+    c0.1-0.9,0.4-2.1,0.8-3.5s0.5-2.1,0.7-2.4c-0.4-0.4-0.5-1.1-0.5-2c0-0.7,0.3-1.3,0.7-1.9C5.5,4.8,6,4.5,6.7,4.5
+    c0.5,0,0.9,0.1,1.2,0.5c0.3,0.3,0.4,0.7,0.4,1.2S8.1,7.6,7.7,8.5c-0.4,0.9-0.5,1.7-0.5,2.3c0,0.5,0.1,0.9,0.5,1.2s0.8,0.5,1.3,0.5
+    c0.4,0,0.8-0.1,1.2-0.3c0.4-0.3,0.7-0.5,0.9-0.8c0.5-0.8,0.9-1.6,1.1-2.5c0.1-0.5,0.1-0.9,0.3-1.3c0-0.4,0.1-0.8,0.1-1.2
+    c0-1.3-0.4-2.4-1.3-3.2C10.4,2.4,9.3,2,7.9,2c-1.6,0-2.9,0.5-4,1.6S2.3,6,2.3,7.6c0,0.4,0,0.7,0.1,1.1c0.1,0.1,0.3,0.4,0.4,0.7
+    c0.1,0.1,0.3,0.4,0.3,0.5c0.1,0.1,0.1,0.3,0.1,0.4c0,0.3,0,0.5-0.1,0.9c-0.1,0.3-0.3,0.4-0.5,0.4c0,0-0.1,0-0.3,0
+    c-0.3-0.1-0.7-0.4-0.9-0.7c-0.4-0.3-0.7-0.7-0.8-1.1C0.4,9.3,0.3,8.9,0.1,8.5C0.1,8.1,0,7.6,0,7.2L0,7.2z"></path>
+  </g>
+  <style>.share-icons .icon--pinterest:hover .hover-fill { fill: #fff;}</style>
+</svg>
+
+</a>
+
+<a href="https://www.linkedin.com/cws/share?url={{ shop.url }}{{ article.url }}" title="Share on Linkedin" target="_blank" class="linkedin">
+
+
+
+
+
+<svg class="icon--linkedin share-icons--icon" height="14px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24.5 20" style="enable-background:new 0 0 24.5 20;" xml:space="preserve">
+  <g class="hover-fill" fill="#fff">
+    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+  </g>
+  <style>.share-icons .icon--linkedin:hover .hover-fill { fill: #fff;}</style>
+</svg>
+
+
+
+
+
+
+</a>
+
+</div>
+
+        
+      </div>
+    </div>
+  </div>
+
+
+  
+
+
+  
+
+</div>
+
+
+
+
+    <div class="article-rte rte clearfix">
+
+      {% unless article_item %}
+       {% assign my_description = article.content | split: '=== split content ==='   %}  
+         {% assign  my_description_size = my_description.size | minus: 2 %}
+      {% if my_description == empty  %}          
+      
+      {{ my_description | first }}
+         <div class="show-product-list"> 
+             {% for i in  (1..my_description_size) %}                   
+               {%- assign name_product = my_description[i] | strip_html | strip -%}
+               {% paginate collections.all.products by 100 %}
+               {%- for product in collections.all.products -%}
+                   {% if product.title == name_product %}
+                      <div class="product_item">
+                       {% include 'new-item' %} 
+                     </div>
+                    
+                   {% endif %}
+               {%- endfor -%}
+               {% endpaginate %}
+             {% endfor %}
+         </div>
+      {% else %}
+           {{ my_description | llast}}
+                    {% endif %}
+
+      {% else %}
+      
+        {{ article.excerpt_or_content }}
+        <a
+          class="article-rte-continuereading"
+          href="{{ article.url }}"
+        >
+          {{ 'blogs.article_item.continue_reading' | t }}
+        </a>
+      {% endunless %}
+    </div>
+
+    {% unless article_item %}
+      {% if article.comments_enabled? %}
+        {% if article.comments.size > 0 %}
+          <div class="comments-wrap read {% if article.comments_count == 0 %}no-comments{% endif %}" id="comments">
+            <h2 class="title">
+              {% capture comment_count %}
+                {% if comment and comment.created_at %}
+                  <span class="count">({{ article.comments_count | plus: 1 }})</span>
+                {% else %}
+                  <span class="count">({{ article.comments_count }})</span>
+                {% endif %}
+              {% endcapture %}
+              {{ 'blogs.article_item.comments_html' | t: comment_count: comment_count }}
+            </h2>
+
+            {% if article.comments_count > 0 %}
+            <ul class="comments">
+
+              {% if comment and comment.created_at %}
+              <li class="comment" id="comment-{{ comment.id }}">
+                <a href="{{ comment.url }}" class="date">{{ comment.created_at | date: format: 'short_month' }}</a>
+                <div class="body">{{ comment.content }}</div>
+                <p class="author">— {{ comment.author }}</p>
+              </li>
+              {% endif %}
+
+              {% for comment in article.comments %}
+              <li class="comment {% include 'for-looper' %}" id="comment-{{ comment.id }}">
+                <a href="{{ comment.url }}" class="date">{{ comment.created_at | date: format: 'short_month' }}</a>
+                <div class="body">{{ comment.content }}</div>
+                <p class="author">— {{ comment.author }}</p>
+              </li>
+              {% endfor %}
+
+            </ul>
+            {% endif %}
+          </div>
+        {% endif %}
+
+        <div
+          class="comments-wrap submit"
+          {% if article.comments.size == 0 %}
+            id="comments"
+          {% endif %}
+        >
+          <h2 class="title">{{ 'blogs.article_item.leave_comment' | t }}</h2>
+
+          {% form article %}
+            {% if form.errors %}
+              <div class="error-message"><span>{{ 'blogs.article_item.error_message' | t }}</span></div>
+            {% endif %}
+
+            {% if form.posted_successfully? %}
+              <div class="alert-message success"><span>{{ 'blogs.article_item.success_message' | t }}</span></div>
+            {% endif %}
+
+            <div class="field-wrap author">
+              <label>{{ 'general.name' | t }}</label>
+                <input type="text" placeholder="{{ 'general.name_placeholder' | t }}" value="" name="comment[author]" class="field {% if form.errors contains "author" %}error{% endif %}">
+            </div>
+
+            <div class="field-wrap email">
+              <label>{{ 'general.email' | t }}</label>
+              <input type="text" placeholder="{{ 'general.email_placeholder' | t }}" value="" name="comment[email]" class="field {% if form.errors contains "email" %}error{% endif %}">
+            </div>
+
+            <div class="field-wrap body">
+              <label>{{ 'general.message' | t }}</label>
+              <textarea name="comment[body]" class="field {% if form.errors contains "body" %}error{% endif %}"></textarea>
+            </div>
+
+            <input type="submit" class="action-button submit-button" value="{{ 'general.submit' | t }}">
+          {% endform %}
+        </div>
+      {% endif %}
+    {% endunless %}
+  </div>
+ 
+</article>
+<style>
+ @media (min-width: 1024px) {
+  .article-content>* {
+    max-width: 760px;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: justify;
+}
+  .article-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    order: 1;
+    width: 80%;
+    padding-left: 180px;
+}
+  
+ }
+  .product {
+  width: 100%;
+  }
+  @media only screen and (max-width: 767px) {
+  button.slick-next.slick-arrow {
+    position: absolute;
+    bottom: 19px;
+    height: 55px;
+    width: 40px;
+    background: 0 0;
+    border: #ffdead;
+    color: transparent;
+    left: 299px;
+  }
+    .article-content>* {
+    max-width: 350px;
+    margin-left: 0;
+    margin-right: 0;
+}
+  button.slick-prev.slick-arrow {
+    left: 0px!important;
+    position: absolute;
+    bottom: 20px;
+    height: 55px;
+    z-index: 999;
+    width: 40px;
+    background: 0 0;
+    border: #ffdead;
+    color: transparent;
+    
+}
+    .article-content {
+      padding-left: 0;}
+
+  }
+    @media (min-width: 768px) and (max-width: 1024px) {
+  .article-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    order: 1;
+    width: 80%;
+    padding-left: 0;
+}
+  
+  }
+   .articles.blog__alternate .single-article {
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    align-items: center;
+}
+.single-article {
+    margin-bottom: 50px;
+    padding-bottom: 10px;
+    float: left;
+    width: 100%;
+}
+.articles.blog__alternate .single-article .article-image2 {
+    grid-column: auto/span 7;
+    width: 100%;
+}
+.article-image2 {
+    width: 100%;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: transparent;
+    overflow: hidden;
+}
+.article-image2 .box-ratio {
+    padding-bottom: 75%!important;
+}
+.box-ratio {
+    display: block;
+    height: 0;
+    width: 100%;
+    overflow: hidden;
+}
+.article-image2 img {
+    object-fit: cover !important;
+    height: 100% !important;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+@media screen and (min-width: 741px){
+.articles.blog__alternate .single-article.odd .article-body {
+    transform: translateX(-8.3333333%)!important;
+    width: 108.3333333%;
+}
+#blog-article-page .share-icons {
+    top: 50%;
+    margin-top: -75px;
+    position: absolute;
+    right: 0;
+}
+.article-inner {
+    width: 90%;
+}
+}
+.articles.blog__alternate .single-article .article-body {
+    grid-column: auto/span 5;
+    width: 100%;
+    padding: 40px;
+    position: relative;
+    z-index: 1;
+    background: #fff;
+}
+@media screen and (min-width: 980px) {
+.gridlock .row .desktop-12 {
+    width: 97.91666667%;
+}}
+.article-inner .post_meta {
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 10px;
+}
+.post_meta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.post_meta {
+    clear: left;
+    margin-top: 10px;
+    border-top: 1px solid #eee;
+    display: block;
+    width: 100%;
+    padding: 5px 0;
+    font-size: 90%;
+}
+.single-article .posted {
+    text-align: left;
+}
+.post_meta>* {
+    display: unset;
+}
+.posted {
+    text-align: center;
+    float: left;
+}
+.post_meta ul {
+    list-style: none;
+}
+.post_meta ul li.tags {
+    display: inline-block;
+    margin-right: 5px;
+}
+.post_meta ul li.tags a {
+    text-decoration: underline;
+}
+.post_meta ul li.tags {
+    display: inline-block;
+    margin-right: 5px;
+}
+.share-icons a.facebook {
+    background: #ffa400;
+}
+.share-icons a {
+    display: block;
+    background: #000;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 10px;
+}
+.share-icons a.twitter {
+    background: #ffa400;
+}
+.share-icons a.pinterest {
+    background: #ffa400;
+}
+  
+.share-icons a.linkedin {
+    background: #ffa400;
+}  
+  h1.b-title {
+    font-size: 24px;
+  }
+  .rte img {
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+}
+  .article-rte.rte.clearfix {
+    width: 76.583333%;
+    margin-left: 10.708333%;
+}
+  @media screen and (max-width: 740px){
+    .main__article .single-article {
+    margin-bottom: 0;
+    }
+    .main__article .share-icons {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    align-items: center;
+}
+    .share-icons {
+    display: inline-block;
+    width: 100%;
+}
+  
+    .article-rte.rte.clearfix {
+    width: 100%;
+    margin-left: 0;
+}
+    .main__article .share-icons a {
+    width: 100%;
+    margin: 0;
+    line-height: 53px;
+}
+    .articles.blog__alternate .single-article .article-image2 {
+    grid-column: auto/span 12;
+}
+    .articles.blog__alternate .single-article .article-body {
+    grid-column: auto/span 12;
+}
+     .comments-wrap {
+     margin-left: 0;
+     width: 100%;
+
+    
+    }
+  }
+  @media screen and (max-width: 739px) {
+  .section-title.mobile-3 {
+   width: 97.91666667%; 
+}
+   
+  
+  }
+  .share-icons a svg {
+    vertical-align: sub;
+}
+  .post_meta ul li.tags {
+    display: inline-block;
+    margin-right: 5px;
+}
+  .single-article .posted {
+    text-align: left;
+    margin-bottom: 20px;
+}
+  .comments-wrap {
+    margin-top: 0 !important;
+    padding-top: 28px;
+    border-top: 0;
+    width: 84%;
+    margin-left: 8rem;
+    margin-bottom: 20px;
+}
+  
+
+  @media screen and (max-width: 768px) {
+  .comments-wrap {
+    margin-top: 0 !important;
+    padding-top: 28px;
+    border-top: 0;
+    width: 100% !important;
+    margin-left: 0! important;
+    margin-bottom: 20px;
+}
+  
+  
+  }
+  span.posted {
+    font-family: 'Futura';
+}
+</style>
